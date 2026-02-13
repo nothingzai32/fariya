@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Day -fariya 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fireworks"></canvas>
+<div id="hearts"></div>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-btn active" data-page="home">Home</a></li>
+    <li><a href="#gallery" class="nav-btn" data-page="gallery">Gallery</a></li>
+    <li><a href="#memories" class="nav-btn" data-page="memories">Memories</a></li>
+    <li><a href="#proposal" class="nav-btn" data-page="proposal">Proposal</a></li>
+  </ul>
+</nav>
+ 
+<!-- Audio preview -->
+<div class="audio-preview">
+  <p class="audio-label">Song preview</p>
+  <audio id="previewAudio" controls preload="metadata">
+    <source src="song/Perfect%20(0-30)%20-%20Mobiles24.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div id="audioOverlay" class="audio-overlay" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);z-index:9999;">
+    <button id="playOverlayBtn" style="font-size:20px;padding:12px 24px;border-radius:8px;border:none;background:#ff6b81;color:white;cursor:pointer;">Play Song ▶</button>
+  </div>
+</div>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+  <div class="home-content">
+    <h1 class="title-main">Happy Valentine's Day 💕</h1>
+    <p class="subtitle">fariya, you mean the world to me...</p>
+    <div class="hearts-container">
+      <div class="floating-heart">❤️</div>
+      <div class="floating-heart">💕</div>
+      <div class="floating-heart">💖</div>
+    </div>
+    <button class="cta-btn" data-page="gallery">See Our Memories →</button>
+  </div>
+</div>
+
+<!-- GALLERY PAGE -->
+<div id="gallery" class="page">
+  <h1>Our Beautiful Moments 📸</h1>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="images/img1.jpg.jpeg" alt="Memory 1">
+      <div class="overlay">Photo 1</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/img2.jpg.jpeg" alt="Memory 2">
+      <div class="overlay">Photo 2</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/img3.jpg.jpeg" alt="Memory 3">
+      <div class="overlay">Photo 3</div>
+    </div>
+  </div>
+  <button class="next-btn" data-page="memories">Continue →</button>
+</div>
+
+<!-- MEMORIES PAGE -->
+<div id="memories" class="page">
+  <h1>Our Memories Together 💝</h1>
+  <div class="memories-container">
+    <div class="memory-card">
+      <h3>First Meeting</h3>
+      <p>On8april I was a little nervous about today,Meeting you feels like finding something I didn't know i was looking for specially. The day that changed my life forever...</p>
+    </div>
+    <div class="memory-card">
+      <h3>Unforgettable Moments</h3>
+      <p>1years of love ....I'm be beyond greatful to have you in my life........I remember the day when the bond of a friendship turn into something know ......& since then,you have brought so much joy,love and happinss into my life......i am so lucky to have you be my side you have been my rock throught all the ups& downs and i am constanly amazed by ur unwavavering support and love.....I love you.......... </p>
+    </div>
+    <div class="memory-card">
+      <h3>Forever Love</h3>
+      <p>I will love you forever and ever, no matter what happens in life. You are my everything and I can't imagine my life without you.</p>
+    </div>
+  </div>
+  <button class="next-btn" data-page="proposal">Proposal →</button>
+</div>
+
+<!-- PROPOSAL PAGE -->
+<div id="proposal" class="page">
+  <canvas id="confetti"></canvas>
+  <div class="proposal-content">
+    <h1 class="proposal-title">fariya 💖</h1>
+    <h2 class="proposal-question">We already built so many beautiful memories but I'm not ready to stop. I want to go through the heights, the lows, and everything in between—as long as I'm holding your hand. Will you do me the greatest honor of my life and MARRY ME? 💍</h2>
+    
+    <div class="proposal-image">
+      <img src="images/img1.jpg.jpeg" alt="fariya" class="proposal-img">
+    </div>
+
+    <div class="buttons">
+      <button id="yesBtn" class="yes-btn">YES 💘</button>
+      <button id="noBtn" class="no-btn">NO 💔</button>
+    </div>
+
+    <h2 id="response" class="response-text"></h2>
+  </div>
+</div>
+
+<!-- ACCEPTANCE PAGE -->
+<div id="acceptance" class="page">
+  <canvas id="confetti-acceptance"></canvas>
+  <div class="acceptance-content">
+    <h1 class="acceptance-title">Please Accept Me 💕</h1>
+    <p class="acceptance-message" id="acceptanceMessage">I want to spend forever with you...</p>
+    
+    <div class="hearts-rain">
+      <div class="rain-heart">❤️</div>
+      <div class="rain-heart">💕</div>
+      <div class="rain-heart">💖</div>
+      <div class="rain-heart">💝</div>
+      <div class="rain-heart">💗</div>
+    </div>
+    
+    <div class="acceptance-images">
+      <img src="images/img1.jpg.jpeg" alt="Memory" class="acceptance-img">
+      <img src="images/img2.jpg.jpeg" alt="Memory" class="acceptance-img">
+      <img src="images/img3.jpg.jpeg" alt="Memory" class="acceptance-img">
+    </div>
+    
+    <div class="acceptance-buttons">
+      <button id="acceptYesBtn" class="acceptance-yes-btn">YES, I Accept ❤️</button>
+      <button id="acceptNoBtn" class="acceptance-no-btn">NO, Ask Again 💔</button>
+    </div>
+    
+    <button class="go-home-btn" onclick="showPage('home')">← Go Back Home</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
